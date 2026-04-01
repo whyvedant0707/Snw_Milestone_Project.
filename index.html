@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CineScope</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- 🔝 Navbar -->
+  <nav>
+    <h1>🎬 CineScope</h1>
+    <input type="text" id="search" placeholder="Search movies...">
+    <select id="typeFilter">
+      <option value="">All</option>
+      <option value="movie">Movie</option>
+      <option value="series">Series</option>
+    </select>
+    <select id="sortYear">
+      <option value="">Sort by Year</option>
+      <option value="asc">Oldest</option>
+      <option value="desc">Newest</option>
+    </select>
+  </nav>
+
+  <!-- 🎬 Movies Container -->
+  <div id="movies"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
