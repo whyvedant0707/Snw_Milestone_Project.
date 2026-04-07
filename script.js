@@ -8,7 +8,7 @@ let allMovies = [];
 const movieContainer = document.getElementById("movies");
 
 async function fetchMovies(query) {
-  movieContainer.innerHTML = "<p>Loading...</p>";
+  movieContainer.innerHTML = "<div class='loader'></div>";
 
   try {
     const res = await fetch(`https://www.omdbapi.com/?apikey=${API_KEY}&s=${query}`);
@@ -92,11 +92,11 @@ function applyFilters() {
   displayMovies(filtered);
 }
 
-// Event Listeners for Filters
+// Event_Listeners_for_Filters
 typeFilter.addEventListener("change", applyFilters);
 sortYear.addEventListener("change", applyFilters);
 
-// Favorites Functionality
+// Favorites_Functionality
 function addToFavorites(id) {
   let favs = JSON.parse(localStorage.getItem("favorites")) || [];
 
@@ -106,3 +106,10 @@ function addToFavorites(id) {
     alert("Added to favorites!");
   }
 }
+
+// Theme_Toggle
+const themeToggle = document.getElementById("themeToggle");
+
+themeToggle.addEventListener("click", () => {
+  document.body.classList.toggle("dark");
+});
