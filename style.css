@@ -70,3 +70,33 @@ nav {
     transform: rotate(360deg);
   }
 }
+
+#home {
+  text-align: center;
+  padding: 50px 20px;
+}
+
+#home h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+#home p {
+  color: #aaa;
+  margin-bottom: 20px;
+}
+
+.suggestions button {
+  margin: 5px;
+  padding: 10px 15px;
+  border: none;
+  background: #444;
+  color: white;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.suggestions button:hover {
+  background: #666;
+}

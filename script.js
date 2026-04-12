@@ -1,3 +1,4 @@
+const homeSection = document.getElementById("home");
 const API_KEY = "835c1caf";
 
 const typeFilter = document.getElementById("typeFilter");
@@ -5,9 +6,12 @@ const sortYear = document.getElementById("sortYear");
 
 let allMovies = [];
 
+
 const movieContainer = document.getElementById("movies");
 
+// Fetch_Movies
 async function fetchMovies(query) {
+  homeSection.style.display = "none";
   movieContainer.innerHTML = "<div class='loader'></div>";
 
   try {
@@ -28,10 +32,11 @@ async function fetchMovies(query) {
 function displayMovies(movies) {
   movieContainer.innerHTML = "";
 
-  if (!movies) {
-    movieContainer.innerHTML = "<p>No movies found</p>";
-    return;
-  }
+if (!movies || movies.length === 0) {
+  movieContainer.innerHTML = "<p>No movies found</p>";
+  homeSection.style.display = "block";
+  return;
+}
 
   movies.forEach(movie => {
     const div = document.createElement("div");
@@ -113,3 +118,8 @@ const themeToggle = document.getElementById("themeToggle");
 themeToggle.addEventListener("click", () => {
   document.body.classList.toggle("dark");
 });
+
+function quickSearch(query) {
+  searchInput.value = query;
+  fetchMovies(query);
+}
